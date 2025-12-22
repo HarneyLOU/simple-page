@@ -51,9 +51,29 @@
         .flags {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 30px;
             margin: 30px 0;
-            font-size: 4em;
+        }
+
+        .flag {
+            width: 120px;
+            height: 80px;
+            border: 2px solid #2c3e50;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .flag-pl {
+            background: linear-gradient(to bottom, #fff 50%, #dc143c 50%);
+        }
+
+        .flag-ua {
+            background: linear-gradient(to bottom, #0057b7 50%, #ffd700 50%);
+        }
+
+        .handshake {
+            font-size: 3em;
         }
 
         .content {
@@ -110,8 +130,13 @@
                 font-size: 2em;
             }
 
-            .flags {
-                font-size: 3em;
+            .flag {
+                width: 80px;
+                height: 53px;
+            }
+
+            .handshake {
+                font-size: 2em;
             }
         }
     </style>
@@ -124,9 +149,9 @@
         </header>
 
         <div class="flags">
-            <span>🇵🇱</span>
-            <span>🤝</span>
-            <span>🇺🇦</span>
+            <div class="flag flag-pl" title="Polska"></div>
+            <div class="handshake">🤝</div>
+            <div class="flag flag-ua" title="Ukraina"></div>
         </div>
 
         <div class="content">
