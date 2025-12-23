@@ -29,6 +29,36 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
+        .language-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
         header {
             text-align: center;
             margin-bottom: 40px;
@@ -157,6 +187,14 @@
             font-size: 0.9em;
         }
 
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
@@ -179,59 +217,225 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Konfederacje</h1>
-            <p class="subtitle">O wspólnym interesie Polski i Ukrainy</p>
-        </header>
-
-        <div class="flags">
-            <div class="flag flag-pl" title="Polska"></div>
-            <div class="handshake">🤝</div>
-            <div class="flag flag-ua" title="Ukraina"></div>
+        <div class="language-switcher">
+            <button class="lang-btn active" onclick="switchLanguage('pl')">Polski 🇵🇱</button>
+            <button class="lang-btn" onclick="switchLanguage('ua')">Українська 🇺🇦</button>
+            <button class="lang-btn" onclick="switchLanguage('en')">English 🇬🇧</button>
         </div>
 
-        <div class="content">
-            <p>
-                Wsparcie dla Ukrainy i Ukraińców nie jest aktem dobroczynności – to kwestia żywotnego interesu narodowego III Rzeczypospolitej. Niepodległa, silna i demokratyczna Ukraina stanowi naturalny bufor między Polską a agresywnym imperializmem rosyjskim.
-            </p>
+        <!-- Polish Content -->
+        <div id="content-pl" class="lang-content active">
+            <header>
+                <h1>Konfederacje</h1>
+                <p class="subtitle">O wspólnym interesie Polski i Ukrainy</p>
+            </header>
 
-            <div class="highlight">
-                <strong>Pamiętajmy:</strong> Wszelkie próby siania niezgody między naszymi narodami służą wyłącznie zewnętrznym aktorom, którzy działają według sprawdzonych przez historię wzorców rozbijania słowiańskiej solidarności.
+            <div class="flags">
+                <div class="flag flag-pl" title="Polska"></div>
+                <div class="handshake">🤝</div>
+                <div class="flag flag-ua" title="Ukraina"></div>
             </div>
 
-            <p>
-                Jeśli Ukraina upadnie, Polska stanie się krajem frontowym. To nie retoryka, to geopolityczna rzeczywistość. Każda złotówka, każdy gest solidarności, każde słowo wsparcia dla Ukrainy to inwestycja w bezpieczeństwo Polski i całej Europy Środkowo-Wschodniej.
-            </p>
-
-            <div class="historical-note">
-                <h2>Lekcja z Konfederacji Targowickiej</h2>
+            <div class="content">
                 <p>
-                    W 1792 roku grupa polskich magnatów, działając w interesie Rosji carskiej, utworzyła Konfederację Targowicką, która doprowadziła do upadku Konstytucji 3 Maja i ostatecznie do rozbiorów Polski. Historia pokazała, że kolaboracja z imperium nigdy nie kończy się dobrze dla małych narodów.
+                    Wsparcie dla Ukrainy i Ukraińców nie jest aktem dobroczynności – to kwestia żywotnego interesu narodowego III Rzeczypospolitej. Niepodległa, silna i demokratyczna Ukraina stanowi naturalny bufor między Polską a agresywnym imperializmem rosyjskim.
                 </p>
+
+                <div class="highlight">
+                    <strong>Pamiętajmy:</strong> Wszelkie próby siania niezgody między naszymi narodami służą wyłącznie zewnętrznym aktorom, którzy działają według sprawdzonych przez historię wzorców rozbijania słowiańskiej solidarności.
+                </div>
+
                 <p>
-                    Dzisiaj widzimy podobne wzorce: próby manipulacji, dezinformacji i rozbudzania historycznych uraz, które mają osłabić polsko-ukraińską solidarność. Nie dajmy się wykorzystać tym, którzy chcą powtórki ze scenariusza z XVIII wieku.
+                    Jeśli Ukraina upadnie, Polska stanie się krajem frontowym. To nie retoryka, to geopolityczna rzeczywistość. Każda złotówka, każdy gest solidarności, każde słowo wsparcia dla Ukrainy to inwestycja w bezpieczeństwo Polski i całej Europy Środkowo-Wschodniej.
                 </p>
+
+                <div class="historical-note">
+                    <h2>Lekcja z Konfederacji Targowickiej</h2>
+                    <p>
+                        W 1792 roku grupa polskich magnatów, działając w interesie Rosji carskiej, utworzyła Konfederację Targowicką, która doprowadziła do upadku Konstytucji 3 Maja i ostatecznie do rozbiorów Polski. Historia pokazała, że kolaboracja z imperium nigdy nie kończy się dobrze dla małych narodów.
+                    </p>
+                    <p>
+                        Dzisiaj widzimy podobne wzorce: próby manipulacji, dezinformacji i rozbudzania historycznych uraz, które mają osłabić polsko-ukraińską solidarność. Nie dajmy się wykorzystać tym, którzy chcą powtórki ze scenariusza z XVIII wieku.
+                    </p>
+                </div>
+
+                <p>
+                    Ukraina walczy nie tylko o swoją wolność – walczy również o naszą. Każdy dzień oporu Ukraińców to dzień, w którym Polska może bezpiecznie rozwijać się w pokoju. To jest prawda, której nie wolno nam zapomnieć.
+                </p>
+
+                <div class="highlight">
+                    <strong>Nasz wspólny interes:</strong> Silna, niepodległa Ukraina w europejskich i euroatlantyckich strukturach to gwarancja bezpieczeństwa Polski na pokolenia.
+                </div>
+
+                <div class="cooperation">
+                    <h2>Zapraszamy do współpracy</h2>
+                    <p>Jeśli podzielasz nasze przekonanie o konieczności wspierania polsko-ukraińskiej solidarności i chcesz dołączyć do naszej inicjatywy, skontaktuj się z nami.</p>
+                    <a href="mailto:admin@konfederacje.pl" class="email-link">admin@konfederacje.pl</a>
+                </div>
             </div>
 
-            <p>
-                Ukraina walczy nie tylko o swoją wolność – walczy również o naszą. Każdy dzień oporu Ukraińców to dzień, w którym Polska może bezpiecznie rozwijać się w pokoju. To jest prawda, której nie wolno nam zapomnieć.
-            </p>
-
-            <div class="highlight">
-                <strong>Nasz wspólny interes:</strong> Silna, niepodległa Ukraina w europejskich i euroatlantyckich strukturach to gwarancja bezpieczeństwa Polski na pokolenia.
-            </div>
-
-            <div class="cooperation">
-                <h2>Zapraszamy do współpracy</h2>
-                <p>Jeśli podzielasz nasze przekonanie o konieczności wspierania polsko-ukraińskiej solidarności i chcesz dołączyć do naszej inicjatywy, skontaktuj się z nami.</p>
-                <a href="mailto:admin@konfederacje.pl" class="email-link">admin@konfederacje.pl</a>
-            </div>
+            <footer>
+                <p>Strona stworzona w duchu polsko-ukraińskiej przyjaźni i wspólnego interesu</p>
+                <p>Za naszą i waszą wolność 🇵🇱 🇺🇦</p>
+            </footer>
         </div>
 
-        <footer>
-            <p>Strona stworzona w duchu polsko-ukraińskiej przyjaźni i wspólnego interesu</p>
-            <p>Za naszą i waszą wolność 🇵🇱 🇺🇦</p>
-        </footer>
+        <!-- Ukrainian Content -->
+        <div id="content-ua" class="lang-content">
+            <header>
+                <h1>Конфедерації</h1>
+                <p class="subtitle">Про спільний інтерес Польщі та України</p>
+            </header>
+
+            <div class="flags">
+                <div class="flag flag-pl" title="Польща"></div>
+                <div class="handshake">🤝</div>
+                <div class="flag flag-ua" title="Україна"></div>
+            </div>
+
+            <div class="content">
+                <p>
+                    Підтримка України та українців – це не акт благодійності, а питання життєво важливих національних інтересів Третьої Речі Посполитої. Незалежна, сильна та демократична Україна є природним буфером між Польщею та агресивним російським імперіалізмом.
+                </p>
+
+                <div class="highlight">
+                    <strong>Пам'ятаймо:</strong> Будь-які спроби посіяти розбрат між нашими народами служать виключно зовнішнім акторам, які діють за перевіреними історією зразками руйнування слов'янської солідарності.
+                </div>
+
+                <p>
+                    Якщо Україна впаде, Польща стане прикордонною країною. Це не риторика, це геополітична реальність. Кожна злота, кожен жест солідарності, кожне слово підтримки України – це інвестиція в безпеку Польщі та всієї Центрально-Східної Європи.
+                </p>
+
+                <div class="historical-note">
+                    <h2>Урок Тарговицької конфедерації</h2>
+                    <p>
+                        У 1792 році група польських магнатів, діючи в інтересах царської Росії, створила Тарговицьку конфедерацію, яка призвела до падіння Конституції 3 травня і зрештою до поділів Польщі. Історія показала, що колаборація з імперією ніколи не закінчується добре для малих народів.
+                    </p>
+                    <p>
+                        Сьогодні ми бачимо подібні схеми: спроби маніпуляції, дезінформації та розпалювання історичних травм, які мають на меті послабити польсько-українську солідарність. Не дозволимо використати нас тим, хто прагне повторення сценарію XVIII століття.
+                    </p>
+                </div>
+
+                <p>
+                    Україна бореться не лише за свою свободу – вона бореться і за нашу. Кожен день українського опору – це день, коли Польща може безпечно розвиватися в мирі. Це правда, яку ми не повинні забувати.
+                </p>
+
+                <div class="highlight">
+                    <strong>Наш спільний інтерес:</strong> Сильна, незалежна Україна в європейських та євроатлантичних структурах – це гарантія безпеки Польщі на покоління.
+                </div>
+
+                <div class="cooperation">
+                    <h2>Запрошуємо до співпраці</h2>
+                    <p>Якщо ви поділяєте наше переконання в необхідності підтримки польсько-української солідарності та хочете приєднатися до нашої ініціативи, зв'яжіться з нами.</p>
+                    <a href="mailto:admin@konfederacje.pl" class="email-link">admin@konfederacje.pl</a>
+                </div>
+            </div>
+
+            <footer>
+                <p>Сайт створено в дусі польсько-української дружби та спільних інтересів</p>
+                <p>За нашу і вашу свободу 🇵🇱 🇺🇦</p>
+            </footer>
+        </div>
+
+        <!-- English Content -->
+        <div id="content-en" class="lang-content">
+            <header>
+                <h1>Confederations</h1>
+                <p class="subtitle">About the common interest of Poland and Ukraine</p>
+            </header>
+
+            <div class="flags">
+                <div class="flag flag-pl" title="Poland"></div>
+                <div class="handshake">🤝</div>
+                <div class="flag flag-ua" title="Ukraine"></div>
+            </div>
+
+            <div class="content">
+                <p>
+                    Support for Ukraine and Ukrainians is not an act of charity – it is a matter of vital national interest for the Third Polish Republic. An independent, strong, and democratic Ukraine serves as a natural buffer between Poland and aggressive Russian imperialism.
+                </p>
+
+                <div class="highlight">
+                    <strong>Remember:</strong> Any attempts to sow discord between our nations serve only external actors who operate according to historically proven patterns of destroying Slavic solidarity.
+                </div>
+
+                <p>
+                    If Ukraine falls, Poland will become a frontline country. This is not rhetoric, this is geopolitical reality. Every zloty, every gesture of solidarity, every word of support for Ukraine is an investment in the security of Poland and all of Central and Eastern Europe.
+                </p>
+
+                <div class="historical-note">
+                    <h2>Lesson from the Targowica Confederation</h2>
+                    <p>
+                        In 1792, a group of Polish magnates, acting in the interests of Tsarist Russia, formed the Targowica Confederation, which led to the fall of the Constitution of May 3rd and ultimately to the partitions of Poland. History has shown that collaboration with an empire never ends well for small nations.
+                    </p>
+                    <p>
+                        Today we see similar patterns: attempts at manipulation, disinformation, and stirring up historical traumas designed to weaken Polish-Ukrainian solidarity. Let us not allow ourselves to be used by those who want a repeat of the 18th-century scenario.
+                    </p>
+                </div>
+
+                <p>
+                    Ukraine is fighting not only for its freedom – it is also fighting for ours. Every day of Ukrainian resistance is a day when Poland can safely develop in peace. This is a truth we must not forget.
+                </p>
+
+                <div class="highlight">
+                    <strong>Our common interest:</strong> A strong, independent Ukraine in European and Euro-Atlantic structures is a guarantee of Poland's security for generations.
+                </div>
+
+                <div class="cooperation">
+                    <h2>Join Us</h2>
+                    <p>If you share our belief in the necessity of supporting Polish-Ukrainian solidarity and want to join our initiative, contact us.</p>
+                    <a href="mailto:admin@konfederacje.pl" class="email-link">admin@konfederacje.pl</a>
+                </div>
+            </div>
+
+            <footer>
+                <p>Website created in the spirit of Polish-Ukrainian friendship and common interest</p>
+                <p>For our freedom and yours 🇵🇱 🇺🇦</p>
+            </footer>
+        </div>
     </div>
+
+    <script>
+        function switchLanguage(lang) {
+            // Hide all content
+            document.querySelectorAll('.lang-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected content
+            document.getElementById('content-' + lang).classList.add('active');
+            
+            // Activate selected button
+            event.target.classList.add('active');
+            
+            // Update page language attribute
+            document.documentElement.lang = lang;
+            
+            // Save preference to localStorage
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && ['pl', 'ua', 'en'].includes(savedLang)) {
+                document.querySelectorAll('.lang-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                document.getElementById('content-' + savedLang).classList.add('active');
+                document.querySelectorAll('.lang-btn')[savedLang === 'pl' ? 0 : savedLang === 'ua' ? 1 : 2].classList.add('active');
+                document.documentElement.lang = savedLang;
+            }
+        });
+    </script>
 </body>
 </html>
